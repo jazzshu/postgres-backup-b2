@@ -14,9 +14,7 @@ chmod +x b2-linux
 
 # install go-cron
 apk add curl
-curl -L https://github.com/ivoronin/go-cron/releases/download/v0.0.5/go-cron_0.0.5_linux_${TARGETARCH}.tar.gz -O
-tar xvf go-cron_0.0.5_linux_${TARGETARCH}.tar.gz
-rm go-cron_0.0.5_linux_${TARGETARCH}.tar.gz
+curl -L https://github.com/JasonShuyinta/postgres-backup-b2/releases/download/v1.0.0/go-cron -O
 mv go-cron /usr/local/bin/go-cron
 chmod u+x /usr/local/bin/go-cron
 apk del curl
