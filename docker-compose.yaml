@@ -3,24 +3,10 @@
 
 services:
   postgres:
+    env_file: .env
     image: postgres:14
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
 
   backup:
+    env_file: .env
     build:
       context: .
-    environment:
-      SCHEDULE: '@weekly'     # optional
-      BACKUP_KEEP_DAYS: 7     # optional
-      PASSPHRASE: passphrase  # optional
-      S3_REGION:
-      B2_KEY_ID:
-      B2_APPLICATION_KEY:
-      B2_BUCKET:
-      B2_PREFIX: backup
-      POSTGRES_HOST: postgres
-      POSTGRES_DATABASE: postgres
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password

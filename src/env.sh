@@ -3,8 +3,8 @@ if [ -z "$B2_BUCKET" ]; then
   exit 1
 fi
 
-if [ -z "$POSTGRES_DATABASE" ]; then
-  echo "You need to set the POSTGRES_DATABASE environment variable."
+if [ -z "$POSTGRES_DB" ]; then
+  echo "You need to set the POSTGRES_DB environment variable."
   exit 1
 fi
 
@@ -28,14 +28,14 @@ if [ -z "$POSTGRES_PASSWORD" ]; then
   exit 1
 fi
 
-if [ -n "$B2_ACCOUNT_ID"]; then 
-  export B2_ACCOUNT_ID=$B2_ACCOUNT_ID
+if [ -n "$B2_APPLICATION_KEY_ID" ]; then 
+  export B2_APPLICATION_KEY_ID=$B2_APPLICATION_KEY_ID
 else 
-  echo "You need to set the B2_ACCOUNT_ID env variable"
+  echo "You need to set the B2_APPLICATION_KEY_ID env variable"
   exit 1
 fi
 
-if [ -n "$B2_APPLICATION_KEY"]; then
+if [ -n "$B2_APPLICATION_KEY" ]; then
   export B2_APPLICATION_KEY=$B2_APPLICATION_KEY
 else 
   echo "You need to set the B2_APPLICATION_KEY env variable"
